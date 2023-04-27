@@ -122,13 +122,15 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log(blogItems);
 
 
-    dataLayer.push({ ecommerce: null });
-    dataLayer.push({
-        event: "view_item_list",
-        ecommerce: {
-            items: blogItems
-        }
-    });
+     if (!blogItems.length === 0) { 
+        dataLayer.push({ ecommerce: null });
+        dataLayer.push({
+            event: "view_item_list",
+            ecommerce: {
+                items: blogItems
+            }
+        });
+    }
 
 
     // Select_Item 
